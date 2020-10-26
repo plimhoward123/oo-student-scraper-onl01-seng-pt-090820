@@ -22,6 +22,7 @@ class Scraper
     document.css('@href').each do |element|
       puts element
       case element
+        bining.pry
       when element.include?("twitter")
         binding.pry
         profHash[:twitter] = element
