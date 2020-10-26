@@ -22,6 +22,7 @@ class Scraper
     document.css("div.main-wrapper.profile .social-icon-container a").each do |element|
       case element
       when (element.attribute("href").value.include?('twitter'))
+        binding.pry
         puts element.attribute("href").value
       end
     end
