@@ -21,7 +21,7 @@ class Scraper
     document = Nokogiri::HTML(open(profile_url))
     document.css('div.main-wrapper.profile .social-icon-container a').each do |element|
       if(element.value.include?('twitter'))
-        []
+        puts "hiiiiiiiiiiiiii"
       end
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
