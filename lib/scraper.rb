@@ -26,6 +26,8 @@ class Scraper
         profHash[:linkedin] = element.attribute("href").value
       elsif (element.attribute("href").value.include?('github'))
         profHash[:github] = element.attribute("href").value
+      else 
+        profHash[:blog] = element.attribute("href").value
       end
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
