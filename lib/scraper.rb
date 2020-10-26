@@ -20,7 +20,7 @@ class Scraper
     profHash = {}
     document = Nokogiri::HTML(open(profile_url))
     document.css('.social-icon-container').each do |element|
-      puts element
+      puts element.css('@href').text
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
     profHash[:bio] = document.css(".description-holder/p").text.strip
