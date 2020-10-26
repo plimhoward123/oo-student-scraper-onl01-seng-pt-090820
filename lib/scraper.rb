@@ -28,7 +28,7 @@ class Scraper
         profHash[:linkedin] = element
       when element.include?("github")
         profHash[:github] = element
-      when element.include?()
+      end
     end
   end
 end
