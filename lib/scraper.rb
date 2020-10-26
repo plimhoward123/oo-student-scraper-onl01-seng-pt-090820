@@ -17,9 +17,17 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
+    profHash = {}
     document = Nokogiri::HTML(open(profile_url))
     document.css('@href').each do |element|
-      puts element
+      case element
+      when element.include?("twitter")
+        profHash[:twitter] = element
+      when element.include?("linkedin")
+        profHash[:linkedin] = element
+      when element.include?("github")
+        profHash[:github] = element
+      when element.include?()
     end
   end
 end
