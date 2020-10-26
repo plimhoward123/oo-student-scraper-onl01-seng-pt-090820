@@ -20,14 +20,8 @@ class Scraper
     profHash = {}
     document = Nokogiri::HTML(open(profile_url))
     document.css('@href').each do |element|
-      puts element
-      case element
-      when element.include?("twitter")
-        profHash[:twitter] = element
-      when element.include?("linkedin")
-        profHash[:linkedin] = element
-      when element.include?("github")
-        profHash[:github] = element
+      if (element.include?("twitter"))
+        puts "hash twitter"
       end
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
