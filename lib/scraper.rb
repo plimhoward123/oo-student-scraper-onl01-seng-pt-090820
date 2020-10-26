@@ -32,6 +32,6 @@ class Scraper
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
     profHash[:bio] = document.css(".description-holder/p").text.strip
-    puts profHash
+    return profHash
   end
 end
