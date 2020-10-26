@@ -19,7 +19,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profHash = {}
     document = Nokogiri::HTML(open(profile_url))
-    document.css('.social-icon-container/href').each do |element|
+    document.css('@href').each do |element|
       puts element
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
