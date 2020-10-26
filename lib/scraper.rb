@@ -23,6 +23,7 @@ class Scraper
       puts element
       case element
       when element.include?("twitter")
+        binding.pry
         profHash[:twitter] = element
       when element.include?("linkedin")
         profHash[:linkedin] = element
