@@ -22,7 +22,7 @@ class Scraper
     document.css('@href').each do |element|
       puts element
       case element
-      when element.include?("twitter")
+      when include?("twitter")
         profHash[:twitter] = element
       when element.include?("linkedin")
         profHash[:linkedin] = element
