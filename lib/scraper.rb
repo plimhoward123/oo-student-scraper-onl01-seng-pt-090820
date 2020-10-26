@@ -22,6 +22,10 @@ class Scraper
     document.css("div.main-wrapper.profile .social-icon-container a").each do |element|
       if (element.attribute("href").value.include?('twitter'))
         profHash[:twitter] = element.attribute("href").value
+      elsif (element.attribute("href").value.include?('linkedin'))
+        profHash[:linkedin] = element.attribute("href").value
+      elsif (element.attribute("href").value.include?('github'))
+        profHash[:github] = element.attribute("href").value
       end
     end
     profHash[:profile_quote] = document.css(".profile-quote").text.strip
