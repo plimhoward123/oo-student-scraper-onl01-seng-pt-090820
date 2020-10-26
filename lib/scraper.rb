@@ -20,7 +20,8 @@ class Scraper
     profHash = {}
     document = Nokogiri::HTML(open(profile_url))
     document.css("div.main-wrapper.profile .social-icon-container a").each do |element|
-      if(element.attribute("href").value.include?('twitter'))
+      case element
+      when (element.attribute("href").value.include?('twitter'))
         puts element.attribute("href").value
       end
     end
