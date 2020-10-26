@@ -20,6 +20,7 @@ class Scraper
     profHash = {}
     document = Nokogiri::HTML(open(profile_url))
     document.css('@href').each do |element|
+      puts element
       case element
       when element.include?("twitter")
         profHash[:twitter] = element
